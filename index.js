@@ -3,7 +3,7 @@ const cors = require('cors');
 const { resolve } = require('path');
 
 const app = express();
-const port = 3010;
+const port = 3000;
 
 app.use(express.static('static'));
 app.use(cors());
@@ -256,7 +256,7 @@ app.get('/hotels/sort/pricing', (req, res) => {
     hotelsCopy.sort(sortByPriceDescending);
   }
 
-  res.json(hotelsCopy);
+  res.json({hotels: hotelsCopy});
 });
 
 app.get('/hotels/sort/rating', (req, res) => {
@@ -268,7 +268,7 @@ app.get('/hotels/sort/rating', (req, res) => {
     hotelsCopy.sort(sortByRatingDescending);
   }
 
-  res.json(hotelsCopy);
+  res.json({hotels: hotelsCopy});
 });
 
 app.get('/hotels/sort/reviews', (req, res) => {
