@@ -231,7 +231,7 @@ function sortByReviewsAscending(hotel1, hotel2) {
   return hotel1.reviews - hotel2.reviews;
 }
 
-function sortByRatingDescending(hotel1, hotel2) {
+function sortByReviewsDescending(hotel1, hotel2) {
   return hotel2.reviews - hotel1.reviews;
 }
 
