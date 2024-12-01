@@ -280,29 +280,29 @@ app.get('/hotels/sort/reviews', (req, res) => {
     hotelsCopy.sort(sortByReviewsDescending);
   }
 
-  res.json(hotelsCopy);
+  res.json({hotels: hotelsCopy});
 });
 
 app.get('/hotels/filter/amenity', (req, res) => {
   let amenity = req.query.amenity.toLowerCase();
   let results = hotels.filter((hotel) => filterByAmenity(hotel, amenity));
-  res.json(results);
+  res.json({hotels: results});
 });
 
 app.get('/hotels/filter/country', (req, res) => {
   let country = req.query.country.toLowerCase();
   let results = hotels.filter((hotel) => filterByCountry(hotel, country));
-  res.json(results);
+  res.json({hotels: results});
 });
 
 app.get('/hotels/filter/category', (req, res) => {
   let category = req.query.category.toLowerCase();
   let results = hotels.filter((hotel) => filterByCategory(hotel, category));
-  res.json(results);
+  res.json({hotels: results});
 });
 
 app.get('/hotels', (req, res) => {
-  res.json(hotels);
+  res.json({hotels: hotels});
 });
 
 app.listen(port, () => {
